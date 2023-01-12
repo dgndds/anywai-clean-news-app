@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 // import { News } from 'src/app/interfaces/News';
 import { NewsArticle } from 'core';
 // import { SearchService } from 'src/app/services/search.service';
+import { SearchService } from 'src/app/services/search.service';
 
 import * as core from 'core';
 
@@ -17,24 +18,25 @@ export class NewsgridComponent implements OnInit {
   searchValue: String = "";
 
   constructor(
-    private getAllNewsArticles:core.GetAllNewsArticlesUsecase
-    // private newsService: NewsService, private searchService:SearchService
-    ) { }
+    private getAllNewsArticles: core.GetAllNewsArticlesUsecase,
+    private searchNewsArticles:core.SearchNewsArticlesUsecase,
+    private searchService: SearchService
+  ){}
 
   ngOnInit(): void {
-    this.getAllNewsArticles.execute().then(response=>{
+    this.getAllNewsArticles.execute().then(response => {
       this.newsArr = response;
       this.shownNews = response;
     });
-    
-    // this.newsService.getNews().subscribe((news: News[]) => {
-    //   this.newsArr = news;
-    //   this.shownNews = news;
-    // });
 
-    // this.searchService.searchEmmiter.subscribe((data:string) => { 
-    //   this.searchValue = data;
-    //   this.shownNews = this.newsArr.filter(news => news.body.substring(0,200).toLowerCase().includes(data.toLowerCase()) || news.title.toLowerCase().includes(data.toLowerCase()));
-    // });
+    this.searchService.searchEmmiter.subscribe((data: string) => {
+      this.initateSearch(data);
+    });
+  }
+
+  initateSearch(data: string): void {
+    this.searchNewsArticles.execute(data).then(response => {
+      this.shownNews = response;
+    });
   }
 }

@@ -6,22 +6,19 @@ import { SearchService } from 'src/app/services/search.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
-  searchInput: string = "";
+  searchInput: string = ""; //this variable is actually used in the html file for the ngModel, to get the input
 
   constructor(
     private searchService:SearchService
   ){}
 
-  ngOnInit(): void {
-  }
-
-  onSearch(): void {
+  submitSearch(): void {
     this.searchService.initiateSearch(this.searchInput);
   }
 
-  onReset(): void {
+  resetSearch(): void {
     this.searchInput = "";
     this.searchService.initiateSearch(this.searchInput);
   }

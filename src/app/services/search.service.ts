@@ -7,8 +7,6 @@ export class SearchService {
 
   searchEmmiter: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() { }
-
   initiateSearch(data:string):void {
     this.searchEmmiter.emit(data);
   }

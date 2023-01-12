@@ -7,7 +7,7 @@ import { CORE_IOC } from 'src/di/news-article.ioc';
 import { CardComponent } from './components/card/card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
-import { NewsgridComponent } from './components/newsgrid/newsgrid.component';
+import { NewsgridComponent } from './components/newsgrid/news-grid.component';
 
 @NgModule({
   declarations: [

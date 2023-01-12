@@ -6,13 +6,9 @@ import { NewsArticle } from 'core';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() 
   newsArticle: NewsArticle = {id:"", title:"", imageUrl:"", body:""};
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

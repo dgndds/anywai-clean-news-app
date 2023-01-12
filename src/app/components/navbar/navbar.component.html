@@ -1,7 +1,7 @@
 <div id="container">
     <form id="form">
             <input type="text" name="search" id="searchBox" placeholder="Search News..." [(ngModel)]="searchInput"/>
-            <input type="submit" value="Search" class="button" (click)="onSearch()"/>
-            <input type="reset" value="Clear" class="button" id="resetButton" (click)="onReset()" *ngIf="searchInput.length > 0">
+            <button type="submit" class="button" (click)="submitSearch()">Search</button>
+            <button type="reset" class="button" id="resetButton" (click)="resetSearch()" *ngIf="searchInput.length > 0">Clear</button>
     </form>
 </div>

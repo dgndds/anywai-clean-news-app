@@ -1,0 +1,37 @@
+#card {
+    box-sizing: border-box;
+    padding: 10px;
+    height: 350px;
+    width: 250px;
+    background-color: rgba(240, 240, 240, 0.700);
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#imageContainer {
+    height: 50%;
+    width: 100%;
+}
+
+#image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#title {
+    color: red;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#newsInfoContainer {
+    height: 50%;
+    width: 100%;
+}
+
+#text {
+    font-size: 16px;
+    text-align: justify;
+}

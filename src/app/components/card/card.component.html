@@ -1,0 +1,13 @@
+<div id="card">
+    <div id="imageContainer">
+        <img src={{newsArticle.imageUrl}} id="image" alt="Place image title">
+    </div>
+    <div id="newsInfoContainer">
+        <h2 id="title">
+            {{ (newsArticle.title.length>20)? (newsArticle.title | slice:0:20)+'...':(newsArticle.title) }}
+        </h2>
+        <p id="text">
+            {{ (newsArticle.body.length>200)? (newsArticle.body | slice:0:200)+'...':(newsArticle.body) }}
+        </p>
+    </div>
+</div>

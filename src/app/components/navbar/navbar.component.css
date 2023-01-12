@@ -1,0 +1,33 @@
+#container {
+    height: 50px;
+    width: 100%;
+    background-color: rgb(243, 64, 41);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+}
+
+#searchBox {
+    height: 20px;
+    flex: 1;
+    outline: none;
+}
+
+#form {
+    width: 75%;
+    max-width: 750px;
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    height: 22px;
+    background-color: #4285F4;
+    color: #fff;
+}
+
+#resetButton {
+    margin-left: 10px;
+}
